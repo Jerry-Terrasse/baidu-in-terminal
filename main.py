@@ -27,14 +27,19 @@ def main():
     i = 1
     while True:
         for id in range(i, i+step):
-            print('\033[34m' + str(id) + '\033[0m')
-#            input("pause")
-            print('\033[1m' + work.find_element_by_id(str(id)).find_element_by_class_name("t").text + '\033[0m')
-#            input("pause")
-#            time.sleep(0.5)
-            print(work.find_element_by_id(str(id)).find_element_by_class_name("c-abstract").text)
-#            input("pause")
-#            time.sleep(0.5)
+            try:
+                time.sleep(1)
+                print('\033[34m' + str(id) + '\033[0m')
+#                input("pause")
+                print('\033[1m' + work.find_element_by_id(str(id)).find_element_by_class_name("t").text + '\033[0m')
+#                input("pause")
+#                time.sleep(0.5)
+                print(work.find_element_by_id(str(id)).find_element_by_class_name("c-abstract").text)
+#                input("pause")
+#                time.sleep(0.5)
+            except:
+                print(null)
+                continue
         i += step
         ln = input(">>>")
         try:
