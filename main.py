@@ -3,6 +3,7 @@
 from selenium import webdriver as wd
 import time
 import sys
+import os
 
 
 baidu = "https://www.baidu.com"
@@ -61,9 +62,11 @@ def main():
 
 if __name__ == '__main__':
     try:
+#        os.chdir(os.path.abspath(os.path.dirname(sys.argv[0])))
         main()
     except SystemExit:
         pass
     except:
         print("Sorry, something went wrong..")
     work.quit()
+    os.system("rm geckodriver.log")
